@@ -1,0 +1,290 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.highlight {
+    color: #00d4ff; /* Cyber Blue */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #00d4ff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?technology,computer');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #00d4ff;
+    color: #1a1a2e;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.die {
+    padding: 50px 5%;
+    text-align: center;
+    color: rgb(17, 16, 16);
+    background-color: #ddd6d6;
+}
+.live{
+    padding: 30px;
+    text-indent: 55px;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    border: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;    /* transition: transform 0.3s; */
+}
+.budget{
+    padding: 20px;
+    text-align: center;
+    color: white;
+    height: 90;
+    width: 100%;
+}
+.take{
+     padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    height: 90;
+    width: 100%;
+}
+.budget{
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: bold;
+    background-color: #464545;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(250, 248, 248, 0.1);
+}
+
+.btn:hover {
+    background-color: #00a8cc;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 5%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #1a1a2e;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 3rem;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+/* Location Map Styling */
+#location {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1a1a2e; /* Matches your dark theme */
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.map-container h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.map-container p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* This styles the map you pasted */
+iframe {
+    width: 100%;       /* Makes it fit mobile & laptop */
+    border-radius: 15px; /* Rounds the corners */
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.2); /* Neon Green Glow */
+    /* filter: invert(90%); OPTIONAL: Makes the map look "Dark Mode" */
+    padding: 10px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 5%;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.contact-info i {
+    color: #00d4ff;
+    margin-right: 10px;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav on mobile */
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .nav-links.nav-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #1a1a2e;
+        width: 50%;
+        height: 50vh;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
