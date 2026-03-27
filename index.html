@@ -6,15 +6,16 @@
     <title>Cybertech Hub & TigerNest Tours | Jaigaon</title>
     <meta name="description" content="One-Stop Solution for Digital Services, Online Forms, and Premier Bhutan Tour Packages in Jaigaon.">
     
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -41,11 +42,38 @@
         }
     </script>
 
-   
+    <style>
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1a1a2e; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00d4ff; }
+
+        .loader {
+            border-top-color: #00d4ff;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .animate-kenburns { animation: kenburns 20s infinite alternate; }
+        .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; opacity: 0; }
+
+        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-slide { min-width: 100%; padding: 0 1rem; }
+
+        .lightbox { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .lightbox.active { opacity: 1; pointer-events: all; }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+        
+        .typing-cursor::after { content: '|'; animation: blink 1s step-start infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
    
-    <div id="page-loader" class="fixed inset-0 z- bg-white flex flex-col items-center justify-center transition-opacity duration-500">
+    <div id="page-loader" class="fixed inset-0 bg-white flex flex-col items-center justify-center transition-opacity duration-500" style="z-index: 100;">
         <div class="loader rounded-full border-4 border-t-4 border-gray-200 h-16 w-16 mb-4"></div>
         <h2 class="text-xl font-serif text-bhutan-dark font-bold">Loading Hub...</h2>
     </div>
@@ -206,9 +234,8 @@
             </div>
 
             <div class="relative group">
-                <div class="overflow-hidden rounded-2xl shadow-2xl aspect-[16/9] md:aspect-[21/9] bg-gray-800 relative" id="carousel-container">
-                    <div class="carousel-track h-full" id="carousel-track">
-                        </div>
+                <div class="overflow-hidden rounded-2xl shadow-2xl bg-gray-800 relative" style="aspect-ratio: 16/9;" id="carousel-container">
+                    <div class="carousel-track h-full" id="carousel-track"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none"></div>
                 </div>
 
@@ -243,8 +270,7 @@
                     <button class="filter-btn px-4 py-2 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-200 transition duration-300" data-filter="budget">Budget</button>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="hotel-grid">
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="hotel-grid"></div>
         </div>
     </section>
 
@@ -413,16 +439,20 @@
         </div>
     </footer>
 
-    <div id="lightbox" class="fixed inset-0 z- bg-black/95 flex items-center justify-center p-4 lightbox">
+    <div id="lightbox" class="fixed inset-0 bg-black/95 flex items-center justify-center p-4 lightbox" style="z-index: 60;">
         <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-bhutan-red transition">
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
-        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[95vw] rounded shadow-2xl border border-white/20">
+        <img id="lightbox-img" src="" class="rounded shadow-2xl border border-white/20" style="max-height: 90vh; max-width: 95vw;">
         <p id="lightbox-caption" class="absolute bottom-8 text-white bg-black/50 px-4 py-2 rounded backdrop-blur-sm"></p>
     </div>
 
-    <script src="script.js">
+    <script src="script.js"></script>
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+        });
     </script>
 </body>
 </html>
