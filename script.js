@@ -80,13 +80,12 @@
             link.addEventListener('click', () => menuBtn.click());
         });
 
-        // 4. Carousel Logic (FIXED IMAGE PATHS)
+   // 4. Carousel Logic (FIXED IMAGE PATHS)
         const slides = [
             { title: "Tiger's Nest (Taktsang)", desc: "Clinging to a cliff 900 meters above Paro valley.", img: "tigernest.jpg" },
             { title: "Punakha Dzong", desc: "The Palace of Great Happiness at the river confluence.", img: "punakhadzong.jpg" },
             { title: "Dochula Pass", desc: "108 memorial chortens and panoramic Himalayan views.", img: "dochulapass.jpg" }
         ];
-
         let currentSlide = 0;
         const track = document.getElementById('carousel-track');
         const indicatorsContainer = document.getElementById('carousel-indicators');
